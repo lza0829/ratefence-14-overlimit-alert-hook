@@ -1,0 +1,62 @@
+:root {
+  --bg: #0c1412;
+  --panel: #13201c;
+  --line: #243832;
+  --text: #e7f2ec;
+  --mute: #8aa899;
+  --brand: #f0b429;
+  --ok: #3ecf8e;
+  --bad: #ff6b4a;
+  --font: "IBM Plex Sans", sans-serif;
+  --display: "Syne", sans-serif;
+  --mono: "IBM Plex Mono", monospace;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #1a3a2e 0%, transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, #3a2a12 0%, transparent 50%),
+    var(--bg);
+  min-height: 100vh;
+}
+.壳 { display: grid; grid-template-columns: 220px 1fr; min-height: 100vh; }
+.侧 {
+  border-right: 1px solid var(--line);
+  background: rgba(10, 18, 16, 0.85);
+  padding: 1.25rem 1rem;
+  display: flex; flex-direction: column; gap: 1rem;
+}
+.侧英 { font-family: var(--display); font-size: 0.75rem; letter-spacing: 0.14em; color: var(--brand); text-transform: uppercase; }
+.侧名 { font-family: var(--display); font-size: 1.8rem; font-weight: 800; line-height: 1.1; }
+.侧骨 { color: var(--mute); font-size: 0.78rem; line-height: 1.4; }
+.侧导 { display: flex; flex-direction: column; gap: 0.25rem; }
+.侧导 a {
+  color: var(--mute); text-decoration: none; padding: 0.45rem 0.6rem; border-radius: 6px;
+}
+.侧导 a.亮 { color: var(--text); background: #1c2e27; border-left: 3px solid var(--brand); }
+.侧脚 { margin-top: auto; color: var(--mute); font-size: 0.7rem; font-family: var(--mono); }
+.主 { padding: 1.5rem 1.75rem 2.5rem; }
+.题 { font-family: var(--display); font-size: 2rem; margin: 0 0 0.35rem; }
+.述 { color: var(--mute); margin: 0 0 1.25rem; }
+.行 { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1rem; }
+button, .钮 {
+  font: inherit; cursor: pointer; border: 1px solid var(--line); background: #1a2a24;
+  color: var(--text); padding: 0.45rem 0.85rem; border-radius: 6px;
+}
+button.主钮 { background: var(--brand); color: #1a1204; border-color: transparent; font-weight: 600; }
+.卡组 { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; margin-bottom: 1.25rem; }
+.卡 { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 0.9rem; }
+.卡 b { display: block; font-family: var(--mono); font-size: 1.4rem; color: var(--brand); }
+.卡 span { color: var(--mute); font-size: 0.8rem; }
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+th, td { border-bottom: 1px solid var(--line); padding: 0.55rem 0.4rem; text-align: left; }
+th { color: var(--mute); font-weight: 600; }
+.好 { color: var(--ok); }
+.坏 { color: var(--bad); }
+@media (max-width: 800px) {
+  .壳 { grid-template-columns: 1fr; }
+  .侧 { border-right: 0; border-bottom: 1px solid var(--line); }
+}

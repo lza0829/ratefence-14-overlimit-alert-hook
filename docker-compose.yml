@@ -1,0 +1,17 @@
+name: ratefence
+services:
+  backend:
+    build: ./backend
+    ports: ["11900:11900"]
+    volumes:
+      - ratefence_data:/data
+      - ./fixtures:/fixtures:ro
+    environment:
+      数据目录: /data
+      样例目录: /fixtures
+  frontend:
+    build: ./frontend
+    ports: ["6900:80"]
+    depends_on: [backend]
+volumes:
+  ratefence_data:

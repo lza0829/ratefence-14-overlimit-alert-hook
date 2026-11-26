@@ -1,0 +1,6 @@
+{
+  "路由键": "route-demo",
+  "方法": "GET",
+  "路径模式": "/api/demo",
+  "桶键": "bucket-demo"
+}
